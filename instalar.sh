@@ -1,71 +1,24 @@
-{
-  "profile": {
-    "path": "desktop",
-    "config": {
-      "desktop": "KDE",
-      "wayland": true
-    }
-  },
-  "keyboard-layout": "es",
-  "ntp": true,
-  "bootloader": "grub",
-  "swap": true,
-  "additional-repositories": [
-    {
-      "name": "multilib",
-      "include": "/etc/pacman.d/mirrorlist"
-    }
-  ],
-  "packages": [
-    "plasma",
-    "sddm",
-    "firefox",
-    "fastfetch",
-    "htop",
-    "git",
-    "networkmanager",
-    "nano",
-    "curl",
-    "amd-ucode",
-    "intel-ucode",
-    "sof-firmware",
-    "power-profiles-daemon",
-    "lm_sensors",
-    "mesa",
-    "gst-plugins-good",
-    "gst-plugins-bad",
-    "gst-plugins-ugly",
-    "bluez",
-    "bluez-utils",
-    "cups",
-    "system-config-printer",
-    "pipewire",
-    "pipewire-pulse",
-    "pipewire-alsa",
-    "wireplumber",
-    "ufw",
-    "gufw",
-    "gparted",
-    "gnome-disk-utility",
-    "kcalc",
-    "dolphin",
-    "gwenview",
-    "kate",
-    "konsole",
-    "kwalletmanager",
-    "libreoffice-fresh",
-    "hunspell-es_es",
-    "okular",
-    "plasma-systemmonitor",
-    "qbittorrent",
-    "spectacle",
-    "telegram-desktop"
-  ],
-  "services": [
-    "bluetooth",
-    "cups",
-    "NetworkManager",
-    "ufw",
-    "sddm"
-  ]
-}
+#!/bin/bash
+
+# Verificar si el archivo de configuración existe
+if [ ! -f "config.json" ]; then
+    echo "Error: config.json no encontrado."
+    exit 1
+fi
+
+echo "--- Iniciando Sinergia: Instalación automatizada ---"
+
+# Ejecutar archinstall usando tu configuración
+# La bandera --config le indica que use tu JSON
+archinstall --config config.json
+
+echo "--- Instalación base terminada ---"
+echo "Ejecutando configuración post-instalación..."
+
+# Aquí puedes llamar a tu script de post-instalación
+if [ -f "post-install.sh" ]; then
+    chmod +x post-install.sh
+    ./post-install.sh
+fi
+
+echo "--- Sinergia instalado correctamente ---"
