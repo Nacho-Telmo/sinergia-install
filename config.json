@@ -1,0 +1,92 @@
+{
+  "profile": {
+    "path": "desktop",
+    "config": {
+      "desktop": "KDE",
+      "wayland": true
+    }
+  },
+  "keyboard-layout": "es",
+  "ntp": true,
+  "disk_config": {
+    "config_type": "partitioning",
+    "device_role": "interactive",
+    "partitions": [
+      {
+        "mountpoint": "/boot",
+        "size": "512MiB",
+        "type": "primary",
+        "format": "fat32"
+      },
+      {
+        "mountpoint": "/",
+        "size": "50GiB",
+        "type": "primary",
+        "format": "ext4"
+      },
+      {
+        "mountpoint": "/home",
+        "size": "100%",
+        "type": "primary",
+        "format": "ext4"
+      }
+    ]
+  },
+  "bootloader": "grub-install",
+  "swap": true,
+  "additional-repositories": [
+    {
+      "name": "multilib",
+      "include": "/etc/pacman.d/mirrorlist"
+    }
+  ],
+  "packages": [
+    "firefox",
+    "fastfetch",
+    "htop",
+    "git",
+    "networkmanager",
+    "nano",
+    "curl",
+    "amd-ucode",
+    "intel-ucode",
+    "sof-firmware",
+    "power-profiles-daemon",
+    "lm_sensors",
+    "mesa",
+    "gst-plugins-good",
+    "gst-plugins-bad",
+    "gst-plugins-ugly",
+    "bluez",
+    "bluez-utils",
+    "cups",
+    "system-config-printer",
+    "pipewire",
+    "pipewire-pulse",
+    "pipewire-alsa",
+    "wireplumber",
+    "ufw",
+    "gufw",
+    "gparted",
+    "gnome-disk-utility",
+    "kcalc",
+    "dolphin",
+    "gwenview",
+    "kate",
+    "konsole",
+    "kwalletmanager",
+    "libreoffice-fresh",
+    "hunspell-es",
+    "okular",
+    "plasma-systemmonitor",
+    "qbittorrent",
+    "spectacle",
+    "telegram-desktop"
+  ],
+  "services": [
+    "bluetooth",
+    "cups",
+    "NetworkManager",
+    "ufw"
+  ]
+}
