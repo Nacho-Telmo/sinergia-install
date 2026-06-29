@@ -17,6 +17,8 @@
     }
   ],
   "packages": [
+    "plasma",
+    "sddm",
     "firefox",
     "fastfetch",
     "htop",
@@ -52,7 +54,7 @@
     "konsole",
     "kwalletmanager",
     "libreoffice-fresh",
-    "hunspell-es_es",
+    "hunspell-es",
     "okular",
     "plasma-systemmonitor",
     "qbittorrent",
@@ -63,6 +65,7 @@
     "bluetooth",
     "cups",
     "NetworkManager",
-    "ufw"
+    "ufw",
+    "sddm"
   ]
 }
