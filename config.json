@@ -8,7 +8,7 @@
   },
   "keyboard-layout": "es",
   "ntp": true,
-  "bootloader": "grub-install",
+  "bootloader": "grub",
   "swap": true,
   "additional-repositories": [
     {
