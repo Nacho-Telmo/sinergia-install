@@ -19,6 +19,7 @@
   "packages": [
     "plasma",
     "sddm",
+    "base-devel",
     "firefox",
     "fastfetch",
     "htop",
