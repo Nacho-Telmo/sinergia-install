@@ -25,10 +25,10 @@ EOF
     echo "Repositorio Chaotic-AUR añadido."
 fi
 
-# 2. Instalar yay desde Chaotic-AUR
+# 2. Instalar yay y ventoy desde Chaotic-AUR
 echo "Actualizando base de datos e instalando yay..."
 pacman -Sy --noconfirm
-pacman -S --noconfirm yay
+pacman -S --noconfirm yay ventoy-bin
 
 # 3. Asegurar servicios y Firewall
 echo "Asegurando servicios y Firewall..."
@@ -41,7 +41,7 @@ ufw enable
 # Nota: $SUDO_USER recupera el usuario que llamó al script
 echo "Instalando stacer-bin y ventoy-bin con yay..."
 if [ -n "$SUDO_USER" ]; then
-    sudo -u "$SUDO_USER" yay -S --noconfirm stacer-bin ventoy-bin
+    sudo -u "$SUDO_USER" yay -S --noconfirm stacer-bin
 else
     echo "Error: No se pudo detectar el usuario para ejecutar yay."
 fi
