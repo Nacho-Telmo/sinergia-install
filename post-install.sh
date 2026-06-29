@@ -27,7 +27,7 @@ fi
 
 # 2. Instalar yay y ventoy desde Chaotic-AUR
 echo "Actualizando base de datos e instalando yay..."
-pacman -Sy --noconfirm
+pacman -Syu --noconfirm
 pacman -S --noconfirm yay ventoy-bin
 
 # 3. Asegurar servicios y Firewall
