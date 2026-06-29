@@ -1,20 +1,16 @@
 #!/bin/bash
 
-# Aseguramos que el script se ejecute como root
+# Verificar que sea root
 if [ "$EUID" -ne 0 ]; then
-  echo "Por favor, ejecútalo como root"
+  echo "Por favor, ejecuta este script como root (sudo ./instalar.sh)"
   exit
 fi
 
-echo "Iniciando la instalación de Sinergia..."
+echo "--- Iniciando instalación guiada de Sinergia ---"
+echo "Por favor, sigue las instrucciones de ArchInstall para elegir tu disco."
 
-# Verificamos que el archivo JSON exista en la misma carpeta
-if [ -f "./config.json" ]; then
-    # Lanzamos archinstall apuntando al JSON
-    archinstall --config ./config.json
-else
-    echo "Error: No se encuentra config.json en este directorio."
-    exit 1
-fi
+# Ejecutamos archinstall utilizando tu config.json
+archinstall --config config.json
 
-echo "Instalación completada. Recuerda ejecutar el script de post-instalación."
+echo "--- Instalación base finalizada ---"
+echo "Ejecuta ./post-install.sh para terminar la configuración."

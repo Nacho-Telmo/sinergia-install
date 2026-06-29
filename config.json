@@ -8,30 +8,6 @@
   },
   "keyboard-layout": "es",
   "ntp": true,
-  "disk_config": {
-    "config_type": "partitioning",
-    "device_role": "interactive",
-    "partitions": [
-      {
-        "mountpoint": "/boot",
-        "size": "512MiB",
-        "type": "primary",
-        "format": "fat32"
-      },
-      {
-        "mountpoint": "/",
-        "size": "50GiB",
-        "type": "primary",
-        "format": "ext4"
-      },
-      {
-        "mountpoint": "/home",
-        "size": "100%",
-        "type": "primary",
-        "format": "ext4"
-      }
-    ]
-  },
   "bootloader": "grub-install",
   "swap": true,
   "additional-repositories": [
